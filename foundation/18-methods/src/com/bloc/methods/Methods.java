@@ -1,6 +1,8 @@
 package com.bloc.methods;
 
 import java.lang.reflect.Method;
+import java.util.Arrays;
+import java.util.Collections;
 
 public class Methods extends Object {
 
@@ -35,9 +37,11 @@ public class Methods extends Object {
 		/************************************************
 		 * Your work goes here
 		 ************************************************/
+		boolean isOpposite = !original;
+
 
 		// You are free to modify the return statement
-		return false;
+		return isOpposite;
 	}
 
 	/*
@@ -60,6 +64,9 @@ public class Methods extends Object {
 		/************************************************
 		 * Your work goes here
 		 ************************************************/
+		for (int i = 0; i < numbers.length; i++){
+			numbers[i] = -numbers[i];
+		}
 	}
 
 
@@ -90,9 +97,18 @@ public class Methods extends Object {
 		/************************************************
 		 * Your work goes here
 		 ************************************************/
-
+		boolean[] boolsArray = new boolean[someNumbers.length];
+		for (int i = 0; i < someNumbers.length; i++) {
+			if (someNumbers[i] > floor) {
+				boolsArray[i] = true;
+			}
+			else {
+				boolsArray[i] = false;
+			}
+			
+		}
 		// You are free to modify the return statement
-		return new boolean [0];
+		return boolsArray;
 	}
 
 	/*
@@ -117,9 +133,23 @@ public class Methods extends Object {
 		/************************************************
 		 * Your work goes here
 		 ************************************************/
+		int[] minMaxArray = new int[2];
+
+		int minValue = Integer.MAX_VALUE; 
+		int maxValue = Integer.MIN_VALUE;
+
+		for (int idx=0; idx < someNumbers.length; ++idx) { 
+			int value = someNumbers[idx]; 
+			if (value < minValue) { minValue = value; } 
+			if (value > maxValue) { maxValue = value; } 
+		} 
+
+		minMaxArray[0] = minValue;
+		minMaxArray[1] = maxValue;
+
 
 		// You are free to modify the return statement
-		return new int[2];
+		return minMaxArray;
 	}
 
 
