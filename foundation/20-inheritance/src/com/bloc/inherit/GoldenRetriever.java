@@ -7,3 +7,6 @@ package com.bloc.inherit;
  *	Golden Retrievers shrink to a smaller size after
  *	playing only 3 times.
 /************************************************/
+
+public class GoldenRetriever extends Dog {
+}

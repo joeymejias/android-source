@@ -1,6 +1,6 @@
 package com.bloc.inherit;
 
-abstract class Dog {
+public class Dog {
 
 	/************************************************
  	*	YOU MAY MODIFY THIS FILE
@@ -14,6 +14,8 @@ abstract class Dog {
 	final static float MINIMUM_WEIGHT = 1f;
 	// Hair length reduced by this value
 	final static float HAIR_LENGTH_REDUCED_FROM_CUT = .2f;
+	// Number of feedings the dog requires before growing, if possible
+	protected static int NUMBER_OF_FEEDINGS_BEFORE_GROWING = 3;
 	// Hair length
 	float mHairLength;
 	// Gender, either "male" or "female"
@@ -152,7 +154,7 @@ abstract class Dog {
 	void feed() {
 		mWeight += WEIGHT_GAINED_FROM_FEEDING;
 		// Pre-increment feed counter
-		if (++mFeedCounter == 3) {
+		if (++mFeedCounter == NUMBER_OF_FEEDINGS_BEFORE_GROWING) {
 			changeSize(true);
 			mFeedCounter = 0;
 		}

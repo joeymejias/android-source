@@ -16,7 +16,7 @@ public class Main extends Object {
 
 		try {
 			// Test Chihuahua : Higher Metabolism
-			Dog chihuahua = (Dog) chihuahuaClass.newInstance();
+			Dog chihuahua = (Dog)chihuahuaClass.newInstance();
 			chihuahua.setSize(chihuahua.fromSizeIndex(0));
 			if (chihuahua.getSizeIndex() != 0) {
 				System.out.println("Something wrong with setting the size of your chihuahua");
