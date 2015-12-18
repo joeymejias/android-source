@@ -9,4 +9,9 @@ package com.bloc.inherit;
 /************************************************/
 
 public class GoldenRetriever extends Dog {
+	int NUMBER_OF_PLAYS_BEFORE_SHRINKING = 3;
+
+	int number_of_plays_before_shrinking() {
+		return NUMBER_OF_PLAYS_BEFORE_SHRINKING;
+	}
 }

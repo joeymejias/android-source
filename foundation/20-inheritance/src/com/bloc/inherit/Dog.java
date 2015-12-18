@@ -1,6 +1,6 @@
 package com.bloc.inherit;
 
-public class Dog {
+public abstract class Dog {
 
 	/************************************************
  	*	YOU MAY MODIFY THIS FILE
@@ -16,6 +16,10 @@ public class Dog {
 	final static float HAIR_LENGTH_REDUCED_FROM_CUT = .2f;
 	// Number of feedings the dog requires before growing, if possible
 	protected static int NUMBER_OF_FEEDINGS_BEFORE_GROWING = 3;
+	// Number of plays before shrinking
+	protected static int NUMBER_OF_PLAYS_BEFORE_SHRINKING = 6;
+	// Max size of Dog
+	protected static int MAX_SIZE_OF_DOG = 3;
 	// Hair length
 	float mHairLength;
 	// Gender, either "male" or "female"
@@ -154,10 +158,14 @@ public class Dog {
 	void feed() {
 		mWeight += WEIGHT_GAINED_FROM_FEEDING;
 		// Pre-increment feed counter
-		if (++mFeedCounter == NUMBER_OF_FEEDINGS_BEFORE_GROWING) {
+		if (++mFeedCounter == number_of_feedings_before_growing()) {
 			changeSize(true);
 			mFeedCounter = 0;
 		}
+	}
+
+	int number_of_feedings_before_growing() {
+		return NUMBER_OF_FEEDINGS_BEFORE_GROWING;
 	}
 
 	/*
@@ -173,10 +181,14 @@ public class Dog {
 			setWeight(MINIMUM_WEIGHT);
 		}
 		// Pre-increment play counter
-		if (++mPlayCounter == 6) {
+		if (++mPlayCounter == number_of_plays_before_shrinking()) {
 			changeSize(false);
 			mPlayCounter = 0;
 		}
+	}
+
+	int number_of_plays_before_shrinking() {
+		return NUMBER_OF_PLAYS_BEFORE_SHRINKING;
 	}
 
 	/*
@@ -201,12 +213,16 @@ public class Dog {
 	void changeSize(boolean grow) {
 		int sizeIndex = getSizeIndex();
 		sizeIndex = sizeIndex + (grow ? 1 : -1);
-		if (sizeIndex > 3) {
-			sizeIndex = 3;
+		if (sizeIndex > max_size_of_dog()) {
+			sizeIndex = max_size_of_dog();
 		} else if (sizeIndex < 0) {
 			sizeIndex = 0;
 		}
 		setSize(fromSizeIndex(sizeIndex));
+	}
+
+	int max_size_of_dog() {
+		return MAX_SIZE_OF_DOG;
 	}
 
 	/*
