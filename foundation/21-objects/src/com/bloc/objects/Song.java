@@ -19,7 +19,15 @@ class Song extends Object {
 	 *	ASSIGNMENT:
 	 *	Create the first Song constructor
 	/************************************************/
-
+	public Song () {
+		this(new Ensemble("Beatles", 
+			new Artist("John", "Lennon"), 
+			new Artist("Paul", "McCartney"), 
+			new Artist("Ringo", "Starr"),
+			new Artist("George", "Harrison")),
+			"Back in the USSR",
+			1968);
+	}
 	/*
 	 * Song
 	 *
@@ -32,7 +40,9 @@ class Song extends Object {
 	 *	ASSIGNMENT:
 	 *	Create the second Song constructor
 	/************************************************/
-
+	public Song (Ensemble ensemble, String song) {
+		this(ensemble, song, 0);
+	}
 	/*
 	 * Song
 	 *
@@ -44,4 +54,9 @@ class Song extends Object {
 	 *	ASSIGNMENT:
 	 *	Create the third Song constructor
 	/************************************************/
+	public Song (Ensemble ensemble, String title, int yearReleased) {
+		mEnsemble = ensemble;
+		mTitle = title;
+		mYearReleased = yearReleased;
+	}
 }

@@ -2,9 +2,9 @@ package com.bloc.objects;
 
 class Artist extends Object {
 	// The artist's first name
-	String mFirstName;
+	public String mFirstName;
 	// The artist's last name
-	String mLastName;
+	public String mLastName;
 
 	/*
 	 * Artist
@@ -16,4 +16,8 @@ class Artist extends Object {
 	 *	ASSIGNMENT:
 	 *	Create the Artist constructor
 	/************************************************/
+	public Artist (String firstName, String lastName) {
+		this.mFirstName = firstName;
+		this.mLastName = lastName;
+	}
 }

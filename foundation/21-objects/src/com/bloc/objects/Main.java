@@ -68,7 +68,7 @@ public class Main extends Object {
 			}
 			smellsLikeTeenSpirit = (Song) songConstructor2.newInstance(nirvana, "Smells Like Teen Spirit");
 			if (smellsLikeTeenSpirit.mEnsemble != nirvana || "Smells Like Teen Spirit".equals(smellsLikeTeenSpirit.mTitle) == false) {
-				System.out.println("Your partial Song constructor failed to set the ensemble, title or both");
+				System.out.println("Your partial Song constructor failed to set the ensemble, title or both song ");
 				System.exit(1);
 			}
 

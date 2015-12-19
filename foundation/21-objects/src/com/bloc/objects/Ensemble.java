@@ -20,7 +20,10 @@ class Ensemble extends Object {
 	 *	ASSIGNMENT:
 	 *	Create the first Ensemble constructor
 	/************************************************/
-
+	// variable length argument list
+	public Ensemble (Artist... artists) {
+		this(null, artists);
+	}
 	/*
 	 * Ensemble
 	 *
@@ -36,4 +39,11 @@ class Ensemble extends Object {
 	 *	ASSIGNMENT:
 	 *	Create the second Ensemble constructor
 	/************************************************/
+	public Ensemble (String name, Artist... artists) {
+		this.mName = name;
+		if (name == null && artists.length > 0) {
+			mName = artists[0].mFirstName + " " + artists[0].mLastName;
+		}
+		this.mArtists = artists;
+	}
 }
