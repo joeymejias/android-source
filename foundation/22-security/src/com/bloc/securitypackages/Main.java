@@ -5,7 +5,7 @@ package com.bloc.securitypackages;
  *	Import the appopriate classes/packages below
 /************************************************/
 
-// e.g. import com.bloc.{your_package};
+import com.bloc.securitypackages.*;
 
 /************************************************
  *	DO NOT MODIFY BELOW THIS BLOCK
@@ -15,17 +15,17 @@ public class Main extends Object {
 
 	public static void main(String [] args) {
 		Fruit[] fruits = new Fruit[4];
-		fruits[0] = new Macintosh();
-		fruits[1] = new Green();
-		fruits[2] = new Orange();
-		fruits[3] = new Grapefruit();
+		fruits[0] = new com.bloc.securitypackages.apples.Macintosh();
+		fruits[1] = new com.bloc.securitypackages.apples.Green();
+		fruits[2] = new com.bloc.securitypackages.citrus.Orange();
+		fruits[3] = new com.bloc.securitypackages.citrus.Grapefruit();
 
 		Color[] colors = new Color[5];
 		colors[0] = fruits[0].getColor();
 		colors[1] = fruits[1].getColor();
 		colors[2] = fruits[2].getColor();
 		colors[3] = fruits[3].getColor();
-		colors[4] = new Orange();
+		colors[4] = new com.bloc.securitypackages.colors.Orange();
 
 		
 		System.out.println("/************************/");
